@@ -1,0 +1,188 @@
+.hero-section {
+  position: relative;
+  min-height: calc(100svh - var(--header-height));
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 420px;
+  align-items: center;
+  gap: 48px;
+  padding-block: 100px;
+}
+
+.hero-title {
+  margin: 24px 0 18px;
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 12vw, 11rem);
+  line-height: 0.78;
+  letter-spacing: -0.09em;
+}
+
+.hero-title span {
+  color: var(--color-cyan);
+}
+
+.hero-role {
+  min-height: 1.5em;
+  color: var(--color-gold);
+  font-size: clamp(0.9rem, 2vw, 1.25rem);
+}
+
+.hero-description {
+  max-width: 680px;
+  margin-top: 24px;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  line-height: 1.9;
+}
+
+.hero-location {
+  margin-top: 20px;
+  color: var(--color-cyan);
+  font-size: 0.8rem;
+}
+
+.hero-location span {
+  color: var(--color-gold);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border: 1px solid var(--color-border-strong);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.button-primary {
+  color: var(--color-bg);
+  background: var(--color-cyan);
+}
+
+.button-primary:hover {
+  background: var(--color-gold);
+}
+
+.button-secondary {
+  color: var(--color-cyan);
+  background: transparent;
+}
+
+.button-secondary:hover {
+  color: var(--color-bg);
+  background: var(--color-cyan);
+}
+
+.compass-interface {
+  position: relative;
+  width: min(100%, 420px);
+  aspect-ratio: 1;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 50%;
+  box-shadow:
+    0 0 80px rgba(88, 240, 221, 0.12),
+    inset 0 0 50px rgba(88, 240, 221, 0.08);
+  transition: transform 0.25s ease;
+}
+
+.compass-orbit {
+  position: absolute;
+  inset: 11%;
+  border: 1px dashed var(--color-border-strong);
+  border-radius: 50%;
+  animation: compass-spin 25s linear infinite;
+}
+
+.orbit-two {
+  inset: 25%;
+  animation-direction: reverse;
+  animation-duration: 16s;
+}
+
+.compass-needle {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  width: 1px;
+  height: 70%;
+  background: linear-gradient(
+    to bottom,
+    var(--color-gold),
+    transparent 70%
+  );
+  transform: rotate(32deg);
+  transform-origin: center;
+}
+
+.compass-center {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  color: var(--color-cyan);
+  font-size: 0.7rem;
+  transform: translate(-50%, -50%);
+}
+
+.compass-label {
+  position: absolute;
+  color: var(--color-gold);
+  font-weight: 700;
+}
+
+.compass-label.north {
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.compass-label.east {
+  top: 50%;
+  right: 8%;
+  transform: translateY(-50%);
+}
+
+.compass-label.south {
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.compass-label.west {
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+}
+
+.hero-coordinates {
+  position: absolute;
+  right: 5vw;
+  bottom: 24px;
+  z-index: 3;
+  display: flex;
+  gap: 20px;
+}

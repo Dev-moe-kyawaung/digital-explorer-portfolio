@@ -1,0 +1,49 @@
+.hero-terrain {
+  position: absolute;
+  right: -5%;
+  bottom: -8%;
+  width: 80%;
+  height: 42%;
+  pointer-events: none;
+  opacity: 0.5;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: translateZ(0);
+}
+
+.terrain-back {
+  opacity: 0.16;
+  background-image:
+    repeating-radial-gradient(
+      ellipse at 40% 100%,
+      transparent 0 28px,
+      var(--color-blue) 29px 30px,
+      transparent 31px 58px
+    );
+}
+
+.terrain-mid {
+  right: -12%;
+  bottom: -12%;
+  opacity: 0.22;
+  background-image:
+    repeating-radial-gradient(
+      ellipse at 48% 100%,
+      transparent 0 24px,
+      var(--color-cyan) 25px 26px,
+      transparent 27px 54px
+    );
+}
+
+.terrain-front {
+  right: -18%;
+  bottom: -20%;
+  opacity: 0.25;
+  background-image:
+    repeating-radial-gradient(
+      ellipse at 54% 100%,
+      transparent 0 20px,
+      var(--color-gold) 21px 22px,
+      transparent 23px 48px
+    );
+}

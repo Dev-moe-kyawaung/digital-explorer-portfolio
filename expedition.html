@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Expedition Logs | Moe Kyaw Aung</title>
+
+  <link rel="stylesheet" href="css/00-reset.css">
+  <link rel="stylesheet" href="css/01-tokens.css">
+  <link rel="stylesheet" href="css/02-base.css">
+  <link rel="stylesheet" href="css/03-layout.css">
+  <link rel="stylesheet" href="css/04-header.css">
+  <link rel="stylesheet" href="css/08-cards.css">
+  <link rel="stylesheet" href="css/10-modal.css">
+  <link rel="stylesheet" href="css/11-forms.css">
+  <link rel="stylesheet" href="css/12-animations.css">
+  <link rel="stylesheet" href="css/13-responsive.css">
+  <link rel="stylesheet" href="css/14-accessibility.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">MKA<span>//</span>EXPLORER</a>
+    <nav id="main-navigation"></nav>
+  </header>
+
+  <main>
+    <section class="page-section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">EXPEDITION ARCHIVE</p>
+            <h1>Project<br>logs.</h1>
+          </div>
+        </div>
+
+        <div class="control-bar">
+          <label class="search-field">
+            <span>⌕</span>
+            <input
+              id="project-search"
+              type="search"
+              placeholder="Search expedition logs..."
+            >
+          </label>
+
+          <select id="project-filter" class="select-field">
+            <option value="all">All missions</option>
+            <option value="Android">Android</option>
+            <option value="Web">Web</option>
+            <option value="AI">AI / ML</option>
+            <option value="Enterprise">Enterprise</option>
+          </select>
+        </div>
+
+        <div id="projects-root" class="expedition-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="project-modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-modal-close></div>
+    <div class="modal-dialog">
+      <button class="modal-close" data-modal-close>×</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/data-projects.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/render-projects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

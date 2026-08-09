@@ -1,22 +1,36 @@
-const navigationItems = [
-  ["MISSION", "#mission"],
-  ["ABOUT", "#about"],
-  ["SKILLS", "#skills"],
-  ["EXPEDITIONS", "#expeditions"],
-  ["APPS", "#apps"],
-  ["COORDINATES", "#coordinates"],
-  ["SOCIAL", "#social"],
-  ["CONTACT", "#contact"]
+const NAV_ITEMS = [
+  ["Mission", "#mission"],
+  ["About", "#about"],
+  ["Skills", "#skills"],
+  ["Expeditions", "#expeditions"],
+  ["Apps", "#apps"],
+  ["Coordinates", "#coordinates"],
+  ["Social", "#social"],
+  ["Contact", "#contact"]
 ];
 
-const navigation = document.querySelector("#main-navigation");
+const navigationRoot = document.querySelector("#main-navigation");
+const menuToggle = document.querySelector("#menu-toggle");
 
-navigation.innerHTML = navigationItems
+navigationRoot.innerHTML = NAV_ITEMS
   .map(
     ([label, href]) => `
-      <a href="\${href}" class="nav-link">
+      <a class="nav-link" href="\${href}">
         \${label}
       </a>
     `
   )
   .join("");
+
+menuToggle?.addEventListener("click", () => {
+  const isOpen = navigationRoot.classList.toggle("is-open");
+
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+navigationRoot.addEventListener("click", (event) => {
+  if (event.target.matches("a")) {
+    navigationRoot.classList.remove("is-open");
+    menuToggle?.setAttribute("aria-expanded", "false");
+  }
+});

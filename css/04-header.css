@@ -1,0 +1,75 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: var(--header-height);
+  padding: 14px 5vw;
+  border-bottom: 1px solid var(--color-border);
+  background: rgba(5, 11, 18, 0.8);
+  backdrop-filter: blur(18px);
+}
+
+.light-theme .site-header {
+  background: rgba(232, 244, 241, 0.8);
+}
+
+.brand {
+  flex: 0 0 auto;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.brand span {
+  color: var(--color-cyan);
+}
+
+#main-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 16px;
+  margin-left: auto;
+}
+
+.nav-link {
+  color: var(--color-muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-cyan);
+}
+
+.header-tools {
+  display: flex;
+  gap: 8px;
+}
+
+.tool-button,
+.small-button {
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-cyan);
+  background: transparent;
+  cursor: pointer;
+}
+
+.tool-button {
+  width: 36px;
+  height: 36px;
+}
+
+.tool-button:hover,
+.small-button:hover {
+  color: var(--color-bg);
+  background: var(--color-cyan);
+}
+
+.menu-button {
+  display: none;
+}

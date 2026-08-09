@@ -1,0 +1,52 @@
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes compass-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#cursor-dot,
+#cursor-ring {
+  position: fixed;
+  z-index: 100;
+  pointer-events: none;
+  border-radius: 50%;
+  transform: translate3d(-100px, -100px, 0);
+}
+
+#cursor-dot {
+  width: 6px;
+  height: 6px;
+  margin: -3px;
+  background: var(--color-cyan);
+}
+
+#cursor-ring {
+  width: 36px;
+  height: 36px;
+  margin: -18px;
+  border: 1px solid var(--color-cyan);
+  transition:
+    width 0.2s ease,
+    height 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.cursor-active #cursor-ring {
+  width: 52px;
+  height: 52px;
+  margin: -26px;
+  border-color: var(--color-gold);
+}

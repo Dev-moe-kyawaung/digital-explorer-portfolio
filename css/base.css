@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@600;800&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  color: var(--color-text);
+  background:
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(28, 89, 112, 0.45),
+      transparent 34%
+    ),
+    var(--color-bg);
+  font-family: var(--font-mono);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+::selection {
+  color: var(--color-bg);
+  background: var(--color-cyan);
+}

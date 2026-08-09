@@ -1,49 +1,385 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Moe Kyaw Aung | Digital Explorer</title>
 
   <meta
     name="description"
-    content="Senior Android Developer and Full-Stack Engineer exploring mobile, web, AI and secure digital systems."
-  />
+    content="Senior Android Developer and Full-Stack Engineer building useful mobile, web, AI and secure digital systems."
+  >
 
-  <link rel="stylesheet" href="css/reset.css" />
-  <link rel="stylesheet" href="css/variables.css" />
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/layout.css" />
-  <link rel="stylesheet" href="css/components.css" />
-  <link rel="stylesheet" href="css/explorer-map.css" />
-  <link rel="stylesheet" href="css/animations.css" />
-  <link rel="stylesheet" href="css/responsive.css" />
+  <meta name="theme-color" content="#061019">
+  <meta name="color-scheme" content="dark light">
+
+  <meta property="og:title" content="Moe Kyaw Aung | Digital Explorer">
+  <meta
+    property="og:description"
+    content="Explore the developer journey of Moe Kyaw Aung."
+  >
+  <meta
+    property="og:image"
+    content="https://res.cloudinary.com/dye5qpwii/image/upload/v1778527878/IMG_20260430_053105_uef0yr.png"
+  >
+
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icons/compass.svg">
+
+  <link rel="stylesheet" href="css/00-reset.css">
+  <link rel="stylesheet" href="css/01-tokens.css">
+  <link rel="stylesheet" href="css/02-base.css">
+  <link rel="stylesheet" href="css/03-layout.css">
+  <link rel="stylesheet" href="css/04-header.css">
+  <link rel="stylesheet" href="css/05-hero.css">
+  <link rel="stylesheet" href="css/06-map-grid.css">
+  <link rel="stylesheet" href="css/07-terrain.css">
+  <link rel="stylesheet" href="css/08-cards.css">
+  <link rel="stylesheet" href="css/09-drone.css">
+  <link rel="stylesheet" href="css/10-modal.css">
+  <link rel="stylesheet" href="css/11-forms.css">
+  <link rel="stylesheet" href="css/12-animations.css">
+  <link rel="stylesheet" href="css/13-responsive.css">
+  <link rel="stylesheet" href="css/14-accessibility.css">
 </head>
 
 <body>
-  <div id="map-grid"></div>
-  <div id="satellite-overlay"></div>
+  <a class="skip-link" href="#main-content">
+    Skip to content
+  </a>
 
-  <header class="site-header">
-    <a href="#mission" class="brand">
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <div class="map-grid" aria-hidden="true"></div>
+  <div class="satellite-overlay" aria-hidden="true"></div>
+
+  <header class="site-header" id="site-header">
+    <a class="brand" href="#mission" aria-label="Moe Kyaw Aung home">
       MKA<span>//</span>EXPLORER
     </a>
 
-    <nav id="main-navigation" aria-label="Main navigation"></nav>
+    <nav id="main-navigation" aria-label="Primary navigation"></nav>
 
-    <div class="header-actions">
-      <button id="theme-toggle" class="icon-button">
+    <div class="header-tools">
+      <button
+        class="tool-button"
+        id="language-toggle"
+        type="button"
+        aria-label="Switch language"
+      >
+        EN
+      </button>
+
+      <button
+        class="tool-button"
+        id="theme-toggle"
+        type="button"
+        aria-label="Toggle theme"
+      >
         ◐
       </button>
 
-      <button id="menu-toggle" class="icon-button">
+      <button
+        class="tool-button menu-button"
+        id="menu-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
         ☰
       </button>
     </div>
   </header>
 
-  <main id="app"></main>
+  <main id="main-content">
+    <section class="hero-section" id="mission">
+      <div class="hero-terrain terrain-back" data-depth="0.08"></div>
+      <div class="hero-terrain terrain-mid" data-depth="0.16"></div>
+      <div class="hero-terrain terrain-front" data-depth="0.24"></div>
+
+      <div class="hero-content container">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">
+            DIGITAL EXPLORER / NAVIGATION DRONE ONLINE
+          </p>
+
+          <h1 class="hero-title">
+            MOE<br>
+            <span>KYAW AUNG</span>
+          </h1>
+
+          <p class="hero-role">
+            <span id="typing-target"></span>
+          </p>
+
+          <p class="hero-description">
+            Mapping ideas into useful digital experiences with Kotlin,
+            Jetpack Compose, modern web systems, AI and cybersecurity.
+          </p>
+
+          <p class="hero-location">
+            Tachileik, Myanmar <span>↔</span> Bangkok, Thailand
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#expeditions">
+              Start Exploration
+            </a>
+
+            <a
+              class="button button-secondary"
+              href="https://github.com/Dev-moe-kyawaung"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open GitHub Base
+            </a>
+          </div>
+        </div>
+
+        <div class="compass-interface reveal" aria-hidden="true">
+          <div class="compass-orbit orbit-one"></div>
+          <div class="compass-orbit orbit-two"></div>
+          <div class="compass-needle"></div>
+          <span class="compass-label north">N</span>
+          <span class="compass-label east">E</span>
+          <span class="compass-label south">S</span>
+          <span class="compass-label west">W</span>
+          <span class="compass-center">MKA</span>
+        </div>
+      </div>
+
+      <div class="hero-coordinates">
+        <span>LAT 16.6891</span>
+        <span>LNG 97.0991</span>
+        <span>ALT 612M</span>
+        <span>STATUS ONLINE</span>
+      </div>
+    </section>
+
+    <section class="page-section" id="about">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-label">01 / EXPLORER PROFILE</p>
+            <h2>Built with<br>purpose.</h2>
+          </div>
+
+          <p>
+            A developer journey shaped by mobile systems, full-stack
+            interfaces, AI experiments, cybersecurity and continuous learning.
+          </p>
+        </div>
+
+        <div id="profile-root"></div>
+      </div>
+    </section>
+
+    <section class="page-section" id="skills">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-label">02 / TECHNICAL TERRAIN</p>
+            <h2>Technical<br>terrain.</h2>
+          </div>
+
+          <p>
+            The tools, architecture patterns and engineering systems used
+            across the expedition archive.
+          </p>
+        </div>
+
+        <div id="skills-root"></div>
+      </div>
+    </section>
+
+    <section class="page-section" id="expeditions">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-label">03 / EXPEDITION ARCHIVE</p>
+            <h2>Project<br>logs.</h2>
+          </div>
+
+          <p>
+            Every build is a route: a problem, a terrain, a technical metric
+            and a deployable outcome.
+          </p>
+        </div>
+
+        <div class="control-bar">
+          <label class="search-field">
+            <span aria-hidden="true">⌕</span>
+            <input
+              id="project-search"
+              type="search"
+              placeholder="Search expedition logs..."
+              autocomplete="off"
+            >
+          </label>
+
+          <select id="project-filter" class="select-field">
+            <option value="all">All missions</option>
+            <option value="Android">Android</option>
+            <option value="Web">Web</option>
+            <option value="AI">AI / ML</option>
+            <option value="Enterprise">Enterprise</option>
+          </select>
+        </div>
+
+        <div id="projects-root" class="expedition-grid"></div>
+      </div>
+    </section>
+
+    <section class="page-section" id="apps">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-label">04 / APP COLLECTION</p>
+            <h2>Mission<br>modules.</h2>
+          </div>
+        </div>
+
+        <div id="apps-root" class="app-grid"></div>
+      </div>
+    </section>
+
+    <section class="page-section" id="coordinates">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-label">05 / COORDINATE NETWORK</p>
+            <h2>GitHub<br>satellites.</h2>
+          </div>
+
+          <p>
+            A selected constellation of GitHub Pages identities and project
+            environments.
+          </p>
+        </div>
+
+        <div id="sites-root" class="satellite-grid"></div>
+      </div>
+    </section>
+
+    <section class="page-section" id="social">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-label">06 / SOCIAL SATELLITE</p>
+            <h2>Find the<br>explorer.</h2>
+          </div>
+        </div>
+
+        <div id="social-root" class="satellite-grid"></div>
+      </div>
+    </section>
+
+    <section class="page-section" id="certifications">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-label">07 / CREDENTIAL ARCHIVE</p>
+            <h2>Verified<br>routes.</h2>
+          </div>
+        </div>
+
+        <div class="credential-grid">
+          <article class="credential-card reveal">
+            <span class="credential-number">82+</span>
+            <span class="credential-label">Certificates</span>
+          </article>
+
+          <article class="credential-card reveal">
+            <span class="credential-number">9</span>
+            <span class="credential-label">Categories</span>
+          </article>
+
+          <article class="credential-card reveal">
+            <span class="credential-number">40+</span>
+            <span class="credential-label">Technical Credentials</span>
+          </article>
+
+          <article class="credential-card reveal">
+            <span class="credential-number">3+</span>
+            <span class="credential-label">Years Building</span>
+          </article>
+        </div>
+
+        <div class="certificate-search-row">
+          <input
+            id="certificate-search"
+            class="input-field"
+            type="search"
+            placeholder="Search certificates..."
+          >
+        </div>
+
+        <div id="certificates-root"></div>
+      </div>
+    </section>
+
+    <section class="page-section" id="contact">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-label">08 / CONTACT BASE</p>
+            <h2>Open a<br>channel.</h2>
+          </div>
+
+          <p>
+            Have a product, mobile system or digital experience to build?
+            Send a transmission.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          <div id="contact-details"></div>
+
+          <form id="contact-form" class="contact-form" novalidate>
+            <label>
+              Name
+              <input
+                name="name"
+                type="text"
+                required
+                minlength="2"
+                autocomplete="name"
+              >
+            </label>
+
+            <label>
+              Email
+              <input
+                name="email"
+                type="email"
+                required
+                autocomplete="email"
+              >
+            </label>
+
+            <label>
+              Message
+              <textarea
+                name="message"
+                rows="6"
+                required
+                minlength="10"
+              ></textarea>
+            </label>
+
+            <button class="button button-primary" type="submit">
+              Send Transmission
+            </button>
+
+            <p id="form-status" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <aside class="navigation-drone" id="navigation-drone">
     <div class="drone-heading">
@@ -55,26 +391,73 @@
       Welcome, explorer. Choose a route to begin.
     </p>
 
-    <button id="drone-next" class="small-button">
-      NEXT GUIDANCE
+    <button id="drone-next" class="small-button" type="button">
+      Next Guidance
     </button>
   </aside>
 
+  <div
+    id="project-modal"
+    class="modal"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+  >
+    <div class="modal-backdrop" data-modal-close></div>
+
+    <div class="modal-dialog">
+      <button
+        class="modal-close"
+        type="button"
+        aria-label="Close project details"
+        data-modal-close
+      >
+        ×
+      </button>
+
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
   <footer class="site-footer">
-    <p>
-      © 2026 Moe Kyaw Aung · Code with culture. Build with purpose.
-    </p>
+    <div class="container">
+      <p>
+        © 2026 Moe Kyaw Aung · Code with culture. Build with purpose.
+      </p>
+    </div>
   </footer>
 
   <script src="js/config.js"></script>
-  <script src="js/data.js"></script>
+  <script src="js/data-profile.js"></script>
+  <script src="js/data-projects.js"></script>
+  <script src="js/data-apps.js"></script>
+  <script src="js/data-social.js"></script>
+  <script src="js/data-sites.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/storage.js"></script>
   <script src="js/theme.js"></script>
   <script src="js/navigation.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/typing.js"></script>
   <script src="js/compass.js"></script>
   <script src="js/map-grid.js"></script>
-  <script src="js/parallax.js"></script>
+  <script src="js/terrain.js"></script>
+  <script src="js/satellite.js"></script>
   <script src="js/drone.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/observer.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/gravatar.js"></script>
+  <script src="js/render-profile.js"></script>
+  <script src="js/render-projects.js"></script>
+  <script src="js/render-apps.js"></script>
+  <script src="js/render-social.js"></script>
+  <script src="js/render-sites.js"></script>
+  <script src="js/forms.js"></script>
+  <script src="js/keyboard.js"></script>
+  <script src="js/security.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

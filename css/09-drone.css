@@ -1,0 +1,65 @@
+.navigation-drone {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 35;
+  width: min(300px, calc(100vw - 48px));
+  padding: 18px;
+  border: 1px solid var(--color-border-strong);
+  background: rgba(5, 20, 29, 0.92);
+  box-shadow: 0 0 36px rgba(88, 240, 221, 0.18);
+  backdrop-filter: blur(16px);
+}
+
+.light-theme .navigation-drone {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.drone-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-cyan);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+}
+
+.drone-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-cyan);
+  box-shadow: 0 0 0 0 rgba(88, 240, 221, 0.7);
+  animation: drone-pulse 1.8s infinite;
+}
+
+.navigation-drone p {
+  min-height: 58px;
+  margin: 14px 0;
+  color: var(--color-muted);
+  font-size: 0.72rem;
+  line-height: 1.7;
+  transition: opacity 0.2s ease;
+}
+
+.navigation-drone p.is-changing {
+  opacity: 0;
+}
+
+.small-button {
+  min-height: 34px;
+  padding: 0 12px;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@keyframes drone-pulse {
+  70% {
+    box-shadow: 0 0 0 10px rgba(88, 240, 221, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(88, 240, 221, 0);
+  }
+}

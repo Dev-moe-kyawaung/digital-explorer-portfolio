@@ -1,0 +1,89 @@
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(12px);
+}
+
+.modal-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(700px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  padding: 34px;
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-panel-solid);
+  box-shadow: 0 0 60px rgba(88, 240, 221, 0.2);
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  border: 0;
+  color: var(--color-cyan);
+  background: transparent;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.modal-dialog h2 {
+  margin-top: 12px;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 7vw, 5rem);
+  line-height: 0.9;
+}
+
+.modal-dialog p {
+  margin-top: 18px;
+  color: var(--color-muted);
+  line-height: 1.8;
+}
+
+.modal-specs {
+  display: grid;
+  gap: 14px;
+  margin: 26px 0;
+}
+
+.modal-specs div {
+  display: grid;
+  gap: 6px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border);
+}
+
+.modal-specs span {
+  color: var(--color-gold);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+}
+
+.modal-specs strong {
+  color: var(--color-muted);
+  font-size: 0.75rem;
+}

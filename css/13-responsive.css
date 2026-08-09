@@ -1,0 +1,124 @@
+@media (max-width: 1050px) {
+  .hero-content {
+    grid-template-columns: minmax(0, 1fr) 300px;
+  }
+
+  .expedition-grid,
+  .app-grid,
+  .satellite-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .focus-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 780px) {
+  .container {
+    width: min(
+      calc(100% - 32px),
+      var(--container)
+    );
+  }
+
+  .site-header {
+    padding-inline: 16px;
+  }
+
+  #main-navigation {
+    position: absolute;
+    top: var(--header-height);
+    right: 16px;
+    left: 16px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    background: var(--color-panel-solid);
+  }
+
+  #main-navigation.is-open {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 14px;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    padding-block: 80px 140px;
+  }
+
+  .compass-interface {
+    width: min(68vw, 280px);
+    margin-inline: auto;
+  }
+
+  .hero-coordinates {
+    right: 16px;
+    bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: end;
+    gap: 8px;
+    font-size: 0.58rem;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .section-heading > p {
+    margin-top: 24px;
+  }
+
+  .profile-layout,
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-image {
+    width: 150px;
+  }
+
+  .credential-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-title {
+    font-size: 4.2rem;
+  }
+
+  .expedition-grid,
+  .app-grid,
+  .satellite-grid,
+  .focus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .credential-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-layout,
+  .contact-form,
+  .contact-card {
+    padding: 20px;
+  }
+
+  .navigation-drone {
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+    width: auto;
+  }
+}

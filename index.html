@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Moe Kyaw Aung | Digital Explorer</title>
+
+  <meta
+    name="description"
+    content="Senior Android Developer and Full-Stack Engineer exploring mobile, web, AI and secure digital systems."
+  />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/explorer-map.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<body>
+  <div id="map-grid"></div>
+  <div id="satellite-overlay"></div>
+
+  <header class="site-header">
+    <a href="#mission" class="brand">
+      MKA<span>//</span>EXPLORER
+    </a>
+
+    <nav id="main-navigation" aria-label="Main navigation"></nav>
+
+    <div class="header-actions">
+      <button id="theme-toggle" class="icon-button">
+        ◐
+      </button>
+
+      <button id="menu-toggle" class="icon-button">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <main id="app"></main>
+
+  <aside class="navigation-drone" id="navigation-drone">
+    <div class="drone-heading">
+      <span class="drone-pulse"></span>
+      NAVIGATION DRONE
+    </div>
+
+    <p id="drone-message">
+      Welcome, explorer. Choose a route to begin.
+    </p>
+
+    <button id="drone-next" class="small-button">
+      NEXT GUIDANCE
+    </button>
+  </aside>
+
+  <footer class="site-footer">
+    <p>
+      © 2026 Moe Kyaw Aung · Code with culture. Build with purpose.
+    </p>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/compass.js"></script>
+  <script src="js/map-grid.js"></script>
+  <script src="js/parallax.js"></script>
+  <script src="js/drone.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
